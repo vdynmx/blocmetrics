@@ -12,6 +12,9 @@ group :development do
   gem 'sqlite3'  
 end
 
+gem 'devise'
+gem 'figaro', '1.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
