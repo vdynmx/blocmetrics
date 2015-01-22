@@ -3,7 +3,7 @@ class Api::V1::EventsController
   respond_to :json
 
   def create
-    @event = Event.new(params.require(:event).permit(:name, :property_1, :property_2))
+    @event = Event.new(event_params)
     
     #append on the event information from  the request
     
@@ -22,7 +22,7 @@ class Api::V1::EventsController
   end
 
   def update
-    @event.update(params.require(:event).permit(:name, :property_1, :property_2))
+    @event.update(event_params)
 
     if @event.save
       flash[:notice] = 'Event was updated.'
@@ -37,6 +37,17 @@ class Api::V1::EventsController
     @event.destroy
     respond_with @event
   end
-  
+
+  private
+
+  def event_params
+    params.require(:event).permit(:name, :property_1, :property_2)
+  end
+
+  def error(status, message = 'Error has occured')
+    response = { response_type: "Error", message }
+    render json: response.to_json, status: status
+  end
+
 
 end
