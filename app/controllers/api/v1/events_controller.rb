@@ -49,5 +49,9 @@ class Api::V1::EventsController
     render json: response.to_json, status: status
   end
 
+  def permission_denied_error
+    error(403, 'Permission Denied!')
+  end
+
 
 end
