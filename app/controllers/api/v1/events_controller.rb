@@ -4,7 +4,7 @@ class Api::V1::EventsController
 
   def create
     @event = Event.new(params.require(:event).permit(:name, :property_1, :property_2))
-
+    
     #append on the event information from  the request
     
     if @event.save
@@ -20,4 +20,19 @@ class Api::V1::EventsController
       # render :json
     end      
   end
+
+  def update
+    @event.update(params.require(:event).permit(:name, :property_1, :property_2))
+
+    if @event.save
+      flash[:notice] = 'Event was updated.'
+      respond_with @event
+    else
+      flash[:notice] = 'Event was no updated.'
+      respond_with @event.errors
+    end
+  end
+
+  
+
 end
