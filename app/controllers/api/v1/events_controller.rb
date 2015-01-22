@@ -9,10 +9,14 @@ class Api::V1::EventsController
     
     if @event.save
       # give a success message, respond with the event created
-      # respond_with  
+      flash[:notice] = 'Event was successfully saved.'
+      # respond_with
+      respond_with @event  
     else
       # give an error message on why save failed
+      flash[:notice] = 'Error has occured.'
       # @event.errors
+      respond_with @event.errors
       # render :json
     end      
   end
