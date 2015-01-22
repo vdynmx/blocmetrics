@@ -33,6 +33,10 @@ class Api::V1::EventsController
     end
   end
 
+  def destroy
+    @event.destroy
+    respond_with @event
+  end
   
 
 end

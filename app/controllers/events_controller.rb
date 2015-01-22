@@ -11,6 +11,9 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def edit
+  end
+
   #def create
    # @event = Event.new(params.require(:event).permit(:name, :property_1, :property_2))
    # @event.save
