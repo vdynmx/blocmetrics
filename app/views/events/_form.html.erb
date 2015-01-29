@@ -1,0 +1,13 @@
+<%= form_for(@event) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.textfield :name %>
+  </div>
+  <div class="field">
+    <%= f.label :ip_address %><br>
+    <%= f.textfield :ip_address %>
+  </div>
+  <div class="field">
+    <%= f.label :eventtime %><br>
+    <%= f.datetime :eventtime %>
+  </div>
