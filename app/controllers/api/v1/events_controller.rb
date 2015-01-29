@@ -41,7 +41,7 @@ class Api::V1::EventsController
   private
 
   def event_params
-    params.require(:event).permit(:name, :property_1, :property_2)
+    params.require(:event).permit(:name, :ip_address, :eventtime)
   end
 
   def error(status, message = 'Error has occured')

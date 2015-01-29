@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   end
 
   #def create
-   # @event = Event.new(params.require(:event).permit(:name, :property_1, :property_2))
+   # @event = Event.new(params.require(:event).permit(:name, :ip_address, :eventtime))
    # @event.save
   #end
 end

@@ -14,6 +14,6 @@
 // };
 // _bm_request.send(JSON.stringify(_bm_event));
 
-var trackEvent = function(name, propety1, property2) {
+var trackEvent = function(name, ip_address, eventtime) {
   
 }
