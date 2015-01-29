@@ -1,5 +1,6 @@
 class Api::V1::EventsController
-
+  
+  before_filter :set_headers
   respond_to :json
 
   def create

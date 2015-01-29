@@ -1,6 +1,4 @@
 class EventsController < ApplicationController
-  
-  before_filter :set_headers
 
   def index
     @events = Event.all
