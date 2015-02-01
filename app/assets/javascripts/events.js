@@ -14,6 +14,16 @@
 // };
 // _bm_request.send(JSON.stringify(_bm_event));
 
-var trackEvent = function(name, ip_address, eventtime) {
+var trackEvent = function(name, eventtime) {
+  var _bm_event = {
+    name: name,
+    eventtime: eventtime
+  }
+
+  var _bm_request = $.ajax(}
+    url: "http://localhost:3000/events",
+    method: "post",
+    data: {event: _bm_event}
+  })
   
 }
