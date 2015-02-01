@@ -25,5 +25,6 @@ var trackEvent = function(name, eventtime) {
     method: "post",
     data: {event: _bm_event}
   })
-  
+
+  _bm_request.send(JSON.stringify(_bm_event));
 }
