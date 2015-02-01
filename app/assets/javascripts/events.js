@@ -20,7 +20,7 @@ var trackEvent = function(name, eventtime) {
     eventtime: eventtime
   }
 
-  var _bm_request = $.ajax(}
+  var _bm_request = $.ajax({
     url: "https://secure-earth-4066.herokuapp.com/events",
     method: "post",
     data: {event: _bm_event}
