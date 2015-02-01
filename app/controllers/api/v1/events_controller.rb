@@ -6,9 +6,8 @@ class Api::V1::EventsController
   def create
     @event = Event.new(event_params)
     
-    @event.ip_address = request.remote_ip()
+    @event.ip_address = request.remote_ip
 
-    @event.eventtime = event.time
     #append on the event information from  the request
     
     if @event.save
