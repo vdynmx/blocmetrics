@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20150115061950) do
 
   create_table "events", force: true do |t|
     t.string   "name"
-    t.string   "property_1"
-    t.string   "property_2"
+    t.string   "ip_address"
+    t.string   "eventtime"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
