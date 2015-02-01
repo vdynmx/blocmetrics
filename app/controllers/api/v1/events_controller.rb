@@ -1,5 +1,5 @@
 class Api::V1::EventsController
-  
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_filter :set_headers
   respond_to :json
 
@@ -63,6 +63,10 @@ class Api::V1::EventsController
       headers['Access-Control-Allow-Methods'] = 'GET, POST, PATCH, PUT, DELETE, OPTIONS, HEAD'
       headers['Access-Control-Allow-Headers'] = '*,x-requested-with,Content-Type,If-Modified-Since,If-None-Match'
       headers['Access-Control-Max-Age'] = '1728000'
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
   end
 
 end
