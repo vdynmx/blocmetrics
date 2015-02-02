@@ -5,14 +5,12 @@ var trackEvent = function(name, eventtime) {
   }
 
   var _bm_request = $.ajax({
-    url: "https://secure-earth-4066.herokuapp.com/events.json",
+    url: "http://localhost:3001/api/v1/events.json",
     method: "post",
-    dataType, "json",
+    dataType: "json",
     data: {event: _bm_event},
     crossDomain: true,
-    xhrFields: {withCredentials: true}
+    xhrFields: {withCredentials: false}
 
   })
-
-  _bm_request.send(JSON.stringify(_bm_event));
-}
+} 
