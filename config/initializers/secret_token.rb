@@ -1,1 +1,1 @@
-Blocmetrics::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
+Blocmetrics::Application.config.secret_key_base = '28f26b310b2e425a119f77e3e177b4bc8de96014ed15cb12b54a058f8fe0944b36be21f736a043da1c37ac77e450fc69553ce6882e42dab6a67a4e45d8b3c825'

@@ -1,7 +1,21 @@
 <div class="row">
   
     <h1>Event Sources</h1>
+    
+  <% for event in @events  %>
   
+  <t body>
+    <tr>
+      
+      <td><%=h event.name %></td>
+      <td><%=h event.ip_address %></td>
+      <td><%= event.created_at.to_s(:short) %></td>
+      
+    </tr>
+  </t body>
+
+  <% end %>
+
     <tbody>
       <% @events.each do |event| %>
         <tr>
@@ -12,4 +26,14 @@
         </tr>
       <% end %>
     </tbody>
+
+    <%= @events.group(:name).count %>
+     <!-- Data for line graph data showing all events by day --> 
+     
+  <div id="value-data" class="hidden">
+    <%= @events.count(group: "DATE(created_at)").values %>
+  </div>
+  
+
+
   </div>
